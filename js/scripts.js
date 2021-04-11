@@ -2,17 +2,15 @@
 function newItem(){
 
 //javascript
-//1. Adding a new item to the list of items: 
-   let li = document.createElement("li");
-   let inputValue = document.getElementById("input").value;
-   let text = document.createTextNode(inputValue);
-   li.appendChild(text);
+//1. Adding a new item to the list of items:
+   let li = $('<li></li>');
+   let inputValue = $('#input').val();
+   li.append(inputvalue);
 
    if (inputValue === '') {
      alert("You must write something!");
    } else {
-     let list = document.querySelector('#list');
-     list.appendChild(li);
+     $('#list').append(li);
    }
 
  //2. Crossing out an item from the list of items:
@@ -22,7 +20,7 @@ function newItem(){
 
  	li.addEventListener("dblclick",crossOut);
 
- //3(i). Adding the delete button "X": 
+ //3(i). Adding the delete button "X":
    let crossOutButton = document.createElement("crossOutButton");
  	crossOutButton.appendChild(document.createTextNode("X"));
  	li.appendChild(crossOutButton);
@@ -32,12 +30,12 @@ function newItem(){
    function deleteListItem(){
  		li.classList.add("delete")
  	}
- // 4. Reordering the items: 
+ // 4. Reordering the items:
    $('#list').sortable();
 
 }
 
- 
+
 
 
 
@@ -86,13 +84,3 @@ function newItem(){
 // 	}
    $('#list').sortable();
 */
-
-
-
-
-
-
-
-
-
-
